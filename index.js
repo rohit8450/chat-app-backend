@@ -37,8 +37,6 @@ io.on('connection', (socket) => {
     socket.user = user;
   });
  
- 
-
   socket.on('message', async ({ user, message, id }) => {
     const newMessage = new Message({ user, message });
     await newMessage.save();
@@ -52,11 +50,6 @@ io.on('connection', (socket) => {
     }
   });
 });
-
-
-
-  
-
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
